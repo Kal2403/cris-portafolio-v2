@@ -1,12 +1,78 @@
 @import "tailwindcss";
 
+:root {
+    --color-dark: #0b1020;
+    --color-secondary-dark: #142a6e;
+    --color-accent-blue: #2e5fff;
+    --color-light-blue: #d9e2ff;
+    --color-light-gray: #f2f4f8;
+
+    --bg-primary: #0b1020;
+    --bg-secondary: #10172a;
+    --bg-card: rgba(20, 42, 110, 0.28);
+
+    --text-primary: #f2f4f8;
+    --text-secondary: #d9e2ff;
+    --text-muted: rgba(217, 226, 255, 0.72);
+
+    --border-soft: rgba(217, 226, 255, 0.14);
+    --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+.light {
+    --bg-primary: #f2f4f8;
+    --bg-secondary: #ffffff;
+    --bg-card: rgba(217, 226, 255, 0.55);
+
+    --text-primary: #0b1020;
+    --text-secondary: #142a6e;
+    --text-muted: rgba(11, 16, 32, 0.68);
+
+    --border-soft: rgba(20, 42, 110, 0.18);
+    --shadow-soft: 0 24px 80px rgba(20, 42, 110, 0.12);
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    background: #020617;
-    color: #e5e7eb;
-    font-family: system-ui, sans-serif;
+    min-width: 320px;
+    min-height: 100vh;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+.container {
+    width: min(1120px, calc(100% - 32px));
+    margin-inline: auto;
+}
+
+.section-padding {
+    padding-block: 96px;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--color-light-blue),
+    var(--color-accent-blue)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.card {
+    border: 1px solid var(--border-soft);
+    background: var(--bg-card);
+    box-shadow: var(--shadow-soft);
+    border-radius: 24px;
 }
